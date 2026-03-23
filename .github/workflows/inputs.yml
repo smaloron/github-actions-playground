@@ -25,14 +25,15 @@ on:
 jobs:
   tests:
     matrix:
-      node-version: [18, 20, 24]
-      os: [ubuntu-latest, windows-latest]
+      node-version: [ 18, 20, 24 ]
+      os: [ ubuntu-latest, windows-latest ]
     steps:
       - name: set up Node
-      uses: action/setup-node@v4
-      with:
-        node-version: ${{matrix.node-version}}
+        uses: action/setup-node@v4
+        with:
+          node-version: ${{matrix.node-version}}
       - name: check version
-      run: |
-      echo "$OS / $node-version"
-      node --version
+        run: |
+          echo "$os / $node-version"
+          node --version
+    runs-on: $os
