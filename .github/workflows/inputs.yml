@@ -6,6 +6,20 @@ name: CI
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      username:
+        description: "Qui execute le workflow ?"
+        required: true
+        default: "moi"
+        type: string
+      OS:
+        description: "Le système d'exploitation cible"
+        type: choice
+        options:
+          - "WINDOWS"
+          - "LINUX"
+          - "MAC OS
+      
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
